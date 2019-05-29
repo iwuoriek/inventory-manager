@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="container-font">
+        <h3 class="h-font">ADD NEW CATEGORY</h3>
+        <form [formGroup]=categoryDetails (ngSubmit)="addCategory()">
+            <div class="form-group">
+                <input type="text" formControlName="name" class="form-control" placeholder="Category Name">
+            </div>
+            <button type="submit" class="btn btn-success button">SAVE</button>
+        </form>
+        <button class="btn btn-danger button" (click)="onCancel()">CANCEL</button>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container-font container-fluid">
+    <h1 class="title-font">Product List</h1>
+    <hr>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="options">
+                <a [routerLink]="['add']">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <p>New Product</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <hr>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Category</td>
+                <td>Brand</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.brand}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                    <button class="btn btn-info" [routerLink]="['update']">UPDATE</button>
+                    <button class="btn btn-danger">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

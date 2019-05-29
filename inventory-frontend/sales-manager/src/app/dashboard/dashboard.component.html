@@ -1,0 +1,41 @@
+<div class="container-font">
+    <table>
+        <tr>
+            <td valign="top">
+                <div class="menu">
+                    <a routerLink="/user">
+                        <span class="glyphicon glyphicon-dashboard"></span>
+                        <p>Dashboard</p>
+                    </a>
+                    <a [routerLink]="['sales']">
+                        <span class="glyphicon glyphicon-piggy-bank"></span>
+                        <p>Sales</p>
+                    </a>
+                    <a [routerLink]="['products']">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <p>Products</p>
+                    </a>
+                    <a [routerLink]="['brands']">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        <p>Brands</p>
+                    </a>
+                    <a [routerLink]="['categories']">
+                        <span class="glyphicon glyphicon-tags"></span>
+                        <p>Categories</p>
+                    </a>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <p>Users</p>
+                    </a>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        <p>Logout</p>
+                    </a>
+                </div>
+            </td>
+            <td style="width: 100%;" valign="top">
+                <router-outlet></router-outlet>
+            </td>
+        </tr>
+    </table>
+</div>

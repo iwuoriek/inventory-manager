@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="container-font">
+        <h3 class="h-font">ADD NEW PRODUCT</h3>
+        <form [formGroup]=productDetails (ngSubmit)="addProduct()">
+            <div class="form-group">
+                <input type="text" formControlName="name" class="form-control" placeholder="Product Name">
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="category" class="form-control" placeholder="Category">
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="brand" class="form-control" placeholder="Brand">
+            </div>
+            <div class="form-group">
+                <input type="number" formControlName="quantity" class="form-control" placeholder="Qunatity">
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="price" class="form-control" placeholder="Price">
+            </div>
+            <button type="submit" class="btn btn-success button">SAVE</button>
+        </form>
+        <button class="btn btn-danger button" (click)="onCancel()">CANCEL</button>
+    </div>
+</div>

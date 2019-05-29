@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="container-font">
+        <h1 class="title-font">Sales Report</h1>
+        <hr>
+        <div class="options">
+            <nav>
+                <a [routerLink]="['daily']">
+                    <span class="glyphicon glyphicon-calendar"></span> Today
+                </a>
+                <a [routerLink]="['weekly']">
+                    <span class="glyphicon glyphicon-calendar"></span> This Week
+                </a>
+                <a [routerLink]="['monthly']">
+                    <span class="glyphicon glyphicon-calendar"></span> This Month
+                </a>
+                <a [routerLink]="['yearly']">
+                    <span class="glyphicon glyphicon-calendar"></span> This Year
+                </a>
+            </nav>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
