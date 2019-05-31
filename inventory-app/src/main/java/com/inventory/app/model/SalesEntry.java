@@ -8,9 +8,9 @@ public class SalesEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "sales_id")
-    private Sales sales;
+    private Sales sales;*/
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -24,8 +24,8 @@ public class SalesEntry {
 
     protected SalesEntry() {}
 
-    public SalesEntry(Sales sales, Product product, int quantity, double total) {
-        this.sales = sales;
+    public SalesEntry(Product product, int quantity, double total) {
+        //this.sales = sales;
         this.product = product;
         this.quantity = quantity;
         this.total = total;
@@ -39,13 +39,13 @@ public class SalesEntry {
         this.id = id;
     }
 
-    public Sales getSales() {
+/*    public Sales getSales() {
         return sales;
     }
 
     public void setSales(Sales sales) {
         this.sales = sales;
-    }
+    }*/
 
     public Product getProduct() {
         return product;
@@ -75,7 +75,7 @@ public class SalesEntry {
     public String toString() {
         return "SalesEntry{" +
                 "id=" + id +
-                ", sales=" + sales +
+                //", sales=" + sales +
                 ", product=" + product +
                 ", quantity=" + quantity +
                 ", total=" + total +

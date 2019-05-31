@@ -23,13 +23,11 @@ public class SalesService {
     private ProductService service;
 
     public SalesDto addSales(SalesDto salesDto){
-        SalesDto dto = new SalesDto(salesDto.getDate(), salesDto.getTotal());
-        dto.setId(generateSalesId());
-        salesDto.getEntryDtos().forEach(salesEntryDto -> {
-            salesEntryDto.setSalesDto(dto);
-            dto.getEntryDtos().add(salesEntryDto);
-        });
-        Sales sales = salesRepository.save(dto.toSales());
+        salesDto.setId(generateSalesId());
+        salesDto.getEntryDtos().forEach(salesEntryDto -> service.updateProduct(
+                salesEntryDto.getProductDto().getId(),
+                salesEntryDto.getProductDto()));
+        Sales sales = salesRepository.save(salesDto.toSales());
         return toSalesDto(sales);
     }
 
@@ -62,8 +60,9 @@ public class SalesService {
         SalesDto salesDto = new SalesDto(sales.getDate(), sales.getTotal());
         salesDto.setId(sales.getId());
         sales.getEntries().forEach(salesEntry -> {
-            SalesEntryDto entryDto = new SalesEntryDto(salesDto, service.toProductDto(salesEntry.getProduct()),
+            SalesEntryDto entryDto = new SalesEntryDto(service.toProductDto(salesEntry.getProduct()),
                     salesEntry.getQuantity(), salesEntry.getTotal());
+            entryDto.setId(salesEntry.getId());
             salesDto.getEntryDtos().add(entryDto);
         });
         return salesDto;

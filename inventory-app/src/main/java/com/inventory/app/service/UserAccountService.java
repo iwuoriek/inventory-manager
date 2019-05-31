@@ -16,7 +16,7 @@ public class UserAccountService {
     @Autowired
     private BusinessService service;
     @Autowired
-    UserAccountRepository repository;
+    private UserAccountRepository repository;
 
     public UserAccountDto registerNewUser(UserAccountDto userAccountDto){
         BusinessDto businessDto;

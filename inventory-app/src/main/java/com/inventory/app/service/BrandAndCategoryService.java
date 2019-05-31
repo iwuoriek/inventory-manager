@@ -29,8 +29,8 @@ public class BrandAndCategoryService {
         return brandDtos;
     }
 
-    public void deleteBrand(BrandDto dto){
-        brandRepository.delete(dto.toBrand());
+    public void deleteBrand(long id){
+        brandRepository.deleteById(id);
     }
 
     public CategoryDto addCategory(CategoryDto dto){
@@ -43,8 +43,8 @@ public class BrandAndCategoryService {
         return categoryDtos;
     }
 
-    public void deleteCategory(CategoryDto dto){
-        categoryRepository.delete(dto.toCategory());
+    public void deleteCategory(long id){
+        categoryRepository.deleteById(id);
     }
 
     public BrandDto toBrandDto(Brand brand){

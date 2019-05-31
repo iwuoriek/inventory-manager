@@ -68,25 +68,26 @@ public class InventoryAppApplication {
 
             logger.info("*************** SALES ***************");
             SalesDto salesDto = new SalesDto( date.parse("05-29-2019"), 2900.95);
-            salesDto.setId("SL19384755");
 
-            SalesEntryDto entry1 = new SalesEntryDto(salesDto, productDtos.get(0), 3, 129.00);
-            SalesEntryDto entry2 = new SalesEntryDto(salesDto, productDtos.get(1), 5, 120.00);
-            SalesEntryDto entry3 = new SalesEntryDto(salesDto, productDtos.get(2), 7, 150.00);
-            SalesEntryDto entry4 = new SalesEntryDto(salesDto, productDtos.get(3), 9, 129.00);
+            SalesEntryDto entry1 = new SalesEntryDto(productDtos.get(0), 3, 129.00);
+            SalesEntryDto entry2 = new SalesEntryDto(productDtos.get(1), 5, 120.00);
+            SalesEntryDto entry3 = new SalesEntryDto(productDtos.get(2), 7, 150.00);
+            SalesEntryDto entry4 = new SalesEntryDto(productDtos.get(3), 9, 129.00);
 
             salesDto.getEntryDtos().add(entry1);
             salesDto.getEntryDtos().add(entry2);
             salesDto.getEntryDtos().add(entry3);
             salesDto.getEntryDtos().add(entry4);
-            SalesDto savedSales = salesService.addSales(salesDto);
+            salesService.addSales(salesDto);
+            salesService.addSales(salesDto);
+            salesService.addSales(salesDto);
 
-            logger.info("*************** FETCHED SALES ***************");
             List<SalesDto> salesDtos = salesService.getAllSales();
-            salesDtos.forEach(salesDto1 -> logger.info(salesDto1.toString()));
 
-            logger.info("*************** FETCHED ENTRIES ***************");
             salesDtos.forEach(salesDto1 -> {
+                logger.info("*************** FETCHED SALES ***************");
+                logger.info(salesDto1.toString());
+                logger.info("*************** FETCHED ENTRIES ***************");
                 salesDto1.getEntryDtos().forEach(salesEntryDto -> {
                     logger.info(salesEntryDto.toString());
                 });

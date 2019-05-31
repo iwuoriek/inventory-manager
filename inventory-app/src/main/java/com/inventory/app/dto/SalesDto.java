@@ -13,6 +13,8 @@ public class SalesDto {
     private List<SalesEntryDto> entryDtos = new ArrayList<>();
     private double total;
 
+    public SalesDto() {}
+
     public SalesDto(Date date, double total) {
         this.date = date;
         this.total = total;
@@ -49,10 +51,20 @@ public class SalesDto {
     public Sales toSales(){
         Sales sales = new Sales(id, date, total);
         entryDtos.forEach(salesEntryDto -> {
-            SalesEntry entry = new SalesEntry(sales, salesEntryDto.getProductDto().toProduct(),
+            SalesEntry entry = new SalesEntry(salesEntryDto.getProductDto().toProduct(),
                     salesEntryDto.getQuantity(), salesEntryDto.getTotal());
             sales.getEntries().add(entry);
         });
         return sales;
+    }
+
+    @Override
+    public String toString() {
+        return "SalesDto{" +
+                "id='" + id + '\'' +
+                ", date=" + date +
+                ", entryDtos=" + entryDtos +
+                ", total=" + total +
+                '}';
     }
 }

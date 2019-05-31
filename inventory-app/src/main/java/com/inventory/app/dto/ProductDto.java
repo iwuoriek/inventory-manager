@@ -10,6 +10,8 @@ public class ProductDto {
     private int quantity;
     private double price;
 
+    public ProductDto() {}
+
     public ProductDto(long id, String name, BrandDto brandDto, CategoryDto categoryDto, int quantity, double price) {
         this.id = id;
         this.name = name;

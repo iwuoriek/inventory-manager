@@ -6,6 +6,8 @@ public class BrandDto {
     private long id;
     private String name;
 
+    public BrandDto() {}
+
     public BrandDto(String name) {
         this.name = name;
     }

@@ -10,6 +10,8 @@ public class UserAccountDto {
     private String role;
     private String password;
 
+    public UserAccountDto() {}
+
     public UserAccountDto(String firstName, String lastName,
                           BusinessDto businessDto, String role, String password) {
         this.firstName = firstName;

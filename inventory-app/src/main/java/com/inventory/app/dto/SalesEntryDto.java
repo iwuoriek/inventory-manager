@@ -4,13 +4,13 @@ import com.inventory.app.model.SalesEntry;
 
 public class SalesEntryDto {
     private long id;
-    private SalesDto salesDto;
+    //private SalesDto salesDto;
     private ProductDto productDto;
     private int quantity;
     private double total;
 
-    public SalesEntryDto(SalesDto salesDto, ProductDto productDto, int quantity, double total) {
-        this.salesDto = salesDto;
+    public SalesEntryDto(ProductDto productDto, int quantity, double total) {
+        //this.salesDto = salesDto;
         this.productDto = productDto;
         this.quantity = quantity;
         this.total = total;
@@ -24,13 +24,13 @@ public class SalesEntryDto {
         this.id = id;
     }
 
-    public SalesDto getSalesDto() {
+/*    public SalesDto getSalesDto() {
         return salesDto;
     }
 
     public void setSalesDto(SalesDto salesDto) {
         this.salesDto = salesDto;
-    }
+    }*/
 
     public ProductDto getProductDto() {
         return productDto;
@@ -60,7 +60,7 @@ public class SalesEntryDto {
     public String toString() {
         return "SalesEntryDto{" +
                 "id=" + id +
-                ", salesDto=" + salesDto.getId() +
+                //", salesDto=" + salesDto.getId() +
                 ", productDto=" + productDto +
                 ", quantity=" + quantity +
                 ", total=" + total +

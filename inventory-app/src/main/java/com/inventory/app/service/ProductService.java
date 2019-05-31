@@ -21,13 +21,25 @@ public class ProductService {
         return toProductDto(repository.save(dto.toProduct()));
     }
 
-    public void deleteProduct(ProductDto dto){
-        repository.delete(dto.toProduct());
+    public ProductDto updateProduct(long id, ProductDto dto){
+        Product prod = repository.findById(id).map(product -> {
+            product.setName(dto.getName());
+            product.setBrand(dto.getBrandDto().toBrand());
+            product.setCategory(dto.getCategoryDto().toCategory());
+            product.setPrice(dto.getPrice());
+            product.setQuantity(dto.getQuantity());
+            return repository.save(product);
+        }).orElseThrow(() -> new NoSuchElementException("No entity found for product: " + dto.getId()));
+        return toProductDto(prod);
     }
 
-    public ProductDto findProduct(ProductDto dto){
-        Product product = repository.findById(dto.getId())
-                .orElseThrow(()->new NoSuchElementException("No entity found for product: " + dto.getId()));
+    public void deleteProduct(long id){
+        repository.deleteById(id);
+    }
+
+    public ProductDto findProduct(long id){
+        Product product = repository.findById(id)
+                .orElseThrow(()->new NoSuchElementException("No entity found for product: " + id));
         return toProductDto(product);
     }
 

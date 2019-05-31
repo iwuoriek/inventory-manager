@@ -14,7 +14,7 @@ public class Sales {
     @Column
     private Date date;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sales", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SalesEntry> entries = new ArrayList<>();
 
     @Column
