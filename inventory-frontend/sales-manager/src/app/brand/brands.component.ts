@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BrandAndCategoryService } from '../service/bc.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Brand } from '../model/brand';
 
 @Component({
     selector: 'app-brands',
@@ -7,16 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BrandsComponent implements OnInit {
-    brands = BRANDS;
+    brands: Brand[];
 
-    constructor() {}
+    constructor(private service: BrandAndCategoryService, private route: ActivatedRoute, private router: Router) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.getBrands();
+    }
+
+    getBrands() {
+        this.service.getBrandList().subscribe(brandsList => this.brands = brandsList);
+    }
+
+    deleteBrand(id: number) {
+        this.service.deleteBrand(id).subscribe(() => this.getBrands());
+    }
 }
-
-const BRANDS = [
-    {id: 1, name: 'Great Value'},
-    {id: 2, name: 'McVities'},
-    {id: 3, name: 'Beros'},
-    {id: 4, name: 'Colgate'}
-];

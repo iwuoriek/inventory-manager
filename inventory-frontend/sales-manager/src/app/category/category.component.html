@@ -28,8 +28,7 @@
                 <td>{{category.id}}</td>
                 <td>{{category.name}}</td>
                 <td>
-                    <button class="btn btn-info" [routerLink]="['update']">UPDATE</button>
-                    <button class="btn btn-danger">DELETE</button>
+                    <button class="btn btn-danger" (click)="deleteCategory(category.id)">DELETE</button>
                 </td>
             </tr>
         </tbody>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { BrandAndCategoryService } from '../service/bc.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from '../model/category';
 
 @Component({
     selector: 'app-category-add',
@@ -12,11 +15,23 @@ export class AddCategoryComponent implements OnInit {
         name: new FormControl('')
     });
 
-    constructor() {}
+    constructor(private service: BrandAndCategoryService, private route: ActivatedRoute, private router: Router) {}
 
     ngOnInit() {}
 
-    addCategory() {}
+    addCategory(values: FormGroup) {
+        const category: Category = {
+            id: 0,
+            name: values.value.name
+        };
+        if (category) {
+            this.service.addCategory(category).subscribe(() => {
+                this.router.navigate(['../../categories'], {relativeTo: this.route});
+            });
+        }
+    }
 
-    onCancel() {}
+    onCancel() {
+        this.router.navigate(['../'], {relativeTo: this.route});
+    }
 }

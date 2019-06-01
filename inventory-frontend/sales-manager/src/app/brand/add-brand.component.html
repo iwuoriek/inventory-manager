@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="container-font">
         <h3 class="h-font">ADD BRAND</h3>
-        <form [formGroup]=brandDetails (ngSubmit)="addBrand()">
+        <form [formGroup]=brandDetails (ngSubmit)="addBrand(brandDetails)">
             <div class="form-group">
                 <input type="text" formControlName="name" class="form-control" placeholder="Brand Name">
             </div>

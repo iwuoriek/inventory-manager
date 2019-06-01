@@ -1,17 +1,18 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row h-font">
         <div class="col-sm-6">
             <div class="container-fluid">
-                <form [formGroup]=loginValues (ngSubmit)="onLogin()">
-                        <h3 class="h-font">User Login</h3>
+                <form [formGroup]=loginValues (ngSubmit)="onLogin(loginValues)">
+                    <h3 class="h-font">User Login</h3>
                     <div class="form-group">
-                        <input type="text" formControlName="ref" class="form-control font-md" placeholder="Business key">
+                        <input type="text" formControlName="username" class="form-control font-md" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input type="email" formControlName="email" class="form-control font-md" placeholder="Email">
+                        <input type="password" formControlName="password" class="form-control font-md"
+                            placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <input type="password" formControlName="password" class="form-control font-md" placeholder="Password">
+                        <p class="error-font">{{message}}</p>
                     </div>
                     <button type="submit" class="btn btn-primary button">Login</button>
                 </form>
@@ -22,56 +23,62 @@
                 <form [formGroup]="registrationValues" (ngSubmit)="onRegister(registrationValues)">
                     <h3 class="h-font">Business Registration</h3>
                     <div class="form-group">
-                        <input type="text" formControlName="cname" class="form-control font-md" placeholder="Company Name">
+                        <input type="text" formControlName="cname" class="form-control font-md"
+                            placeholder="Company Name">
                     </div>
                     <div class="form-group">
-                        <input type="email" formControlName="cemail" class="form-control font-md" placeholder="Company Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" formControlName="street" class="form-control font-md" placeholder="Street # and name">
+                        <input type="email" formControlName="cemail" class="form-control font-md"
+                            placeholder="Company Email">
                     </div>
                     <table>
                         <tr>
                             <td class="td">
                                 <div class="form-group">
-                                    <input type="text" formControlName="city" class="form-control font-md" placeholder="City">
+                                    <h5>Date Established</h5>
                                 </div>
                             </td>
                             <td class="td">
                                 <div class="form-group">
-                                    <input type="text" formControlName="pcode" class="form-control font-md" placeholder="Post code">
-                                </div>
-                            </td>
-                            <td class="td">
-                                <div class="form-group">
-                                    <input type="text" formControlName="country" class="form-control font-md" placeholder="Country">
+                                    <input type="date" formControlName="date" class="form-control font-md">
                                 </div>
                             </td>
                         </tr>
                     </table>
-                    <h3 class="h-font">Owner Details</h3>
+                    <h3 class="h-font">User Details</h3>
                     <table style="width: 100%">
                         <tr>
                             <td class="td">
                                 <div class="form-group">
-                                    <input type="text" formControlName="fname" class="form-control font-md" placeholder="First name">
+                                    <input type="text" formControlName="fname" class="form-control font-md"
+                                        placeholder="First name">
                                 </div>
                             </td>
                             <td class="td">
                                 <div class="form-group">
-                                    <input type="text" formControlName="sname" class="form-control font-md" placeholder="Last name">
+                                    <input type="text" formControlName="sname" class="form-control font-md"
+                                        placeholder="Last name">
                                 </div>
                             </td>
                         </tr>
                     </table>
                     <div class="form-group">
-                        <input type="email" formControlName="uemail" class="form-control font-md" placeholder="User Email">
+                        <input type="email" formControlName="uemail" class="form-control font-md"
+                            placeholder="User Email">
                     </div>
                     <div class="form-group">
-                        <input type="password" formControlName="pword" class="form-control font-md" placeholder="Password">
+                        <select formControlName="role" class="form-control font-md">
+                            <option value="">--Select a role--</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Staff">Staff</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <input type="password" formControlName="cpword" class="form-control font-md" placeholder="Confirm password">
+                        <input type="password" formControlName="pword" class="form-control font-md"
+                            placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" formControlName="cpword" class="form-control font-md"
+                            placeholder="Confirm password">
                     </div>
                     <button type="submit" class="btn btn-success button">Register</button>
                 </form>

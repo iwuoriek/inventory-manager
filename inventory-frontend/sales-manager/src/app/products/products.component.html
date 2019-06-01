@@ -31,13 +31,13 @@
             <tr *ngFor="let product of products">
                 <td>{{product.id}}</td>
                 <td>{{product.name}}</td>
-                <td>{{product.category}}</td>
-                <td>{{product.brand}}</td>
+                <td>{{product.categoryDto.name}}</td>
+                <td>{{product.brandDto.name}}</td>
                 <td>{{product.quantity}}</td>
                 <td>{{product.price}}</td>
                 <td>
-                    <button class="btn btn-info" [routerLink]="['update']">UPDATE</button>
-                    <button class="btn btn-danger">DELETE</button>
+                    <button class="btn btn-info" [routerLink]="['update', product.id]">UPDATE</button>
+                    <button class="btn btn-danger" (click)="deleteProduct(product.id)">DELETE</button>
                 </td>
             </tr>
         </tbody>

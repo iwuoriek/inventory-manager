@@ -28,8 +28,7 @@
                 <td>{{brand.id}}</td>
                 <td>{{brand.name}}</td>
                 <td>
-                    <button class="btn btn-info" [routerLink]="['update']">UPDATE</button>
-                    <button class="btn btn-danger">DELETE</button>
+                    <button class="btn btn-danger" (click)="deleteBrand(brand.id)">DELETE</button>
                 </td>
             </tr>
         </tbody>

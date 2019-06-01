@@ -20,7 +20,7 @@ import { UpdateCategoryComponent } from './category/update-category.component';
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'user', component: DashboardComponent, children: [
+  {path: 'user/:username', component: DashboardComponent, children: [
     {path: '', redirectTo: 'sales', pathMatch: 'full'},
     {path: 'sales', component: SalesComponent, children: [
       {path: '', redirectTo: 'daily', pathMatch: 'full'},
@@ -31,7 +31,7 @@ const routes: Routes = [
     ]},
     {path: 'products', component: ProductsComponent, children: [
       {path: 'add', component: AddProductComponent},
-      {path: 'update', component: UpdateProductComponent}
+      {path: 'update/:id', component: UpdateProductComponent}
     ]},
     {path: 'brands', component: BrandsComponent, children: [
       {path: 'add', component: AddBrandComponent},

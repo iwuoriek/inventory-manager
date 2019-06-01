@@ -11,7 +11,7 @@ import java.util.*;
 @Service
 public class BusinessService {
     @Autowired
-    BusinessRepository businessRepository;
+    private BusinessRepository businessRepository;
 
     public BusinessDto registerBusiness(BusinessDto businessDto){
         int flag = 0;

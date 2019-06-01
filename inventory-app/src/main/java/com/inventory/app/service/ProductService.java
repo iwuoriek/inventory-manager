@@ -13,9 +13,9 @@ import java.util.NoSuchElementException;
 @Service
 public class ProductService {
     @Autowired
-    BrandAndCategoryService service;
+    private BrandAndCategoryService service;
     @Autowired
-    ProductRepository repository;
+    private ProductRepository repository;
 
     public ProductDto addProduct(ProductDto dto){
         return toProductDto(repository.save(dto.toProduct()));
