@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './registration/login.component';
 import { SalesComponent } from './sales/sales.component';
-import { DailyComponent } from './sales/daily.component';
-import { WeeklyComponent } from './sales/weekly.component';
+import { AllSalesComponent } from './sales/all-sales.component';
 import { MonthlyComponent } from './sales/monthly.component';
 import { AnnualComponent } from './sales/annual.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,16 +15,17 @@ import { UpdateBrandComponent } from './brand/update-brand.component';
 import { CategoryComponent } from './category/category.component';
 import { AddCategoryComponent } from './category/add-category.component';
 import { UpdateCategoryComponent } from './category/update-category.component';
+import { PurchaseComponent } from './sales/puchase.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'user/:username', component: DashboardComponent, children: [
     {path: '', redirectTo: 'sales', pathMatch: 'full'},
+    {path: 'purchase', component: PurchaseComponent},
     {path: 'sales', component: SalesComponent, children: [
-      {path: '', redirectTo: 'daily', pathMatch: 'full'},
-      {path: 'daily', component: DailyComponent},
-      {path: 'weekly', component: WeeklyComponent},
+      {path: '', redirectTo: 'all', pathMatch: 'full'},
+      {path: 'all', component: AllSalesComponent},
       {path: 'monthly', component: MonthlyComponent},
       {path: 'yearly', component: AnnualComponent}
     ]},

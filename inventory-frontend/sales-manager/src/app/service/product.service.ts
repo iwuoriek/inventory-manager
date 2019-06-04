@@ -11,6 +11,7 @@ import { HttpResource } from './http.resource';
 
 export class ProductService {
     private endpoint = 'http://localhost:8080/inventory/product';
+    // private endpoint = 'http://spring-boot-inventory-app-dev.us-west-2.elasticbeanstalk.com/inventory/product';
 
     constructor(private httpClient: HttpClient, private resource: HttpResource) {}
 

@@ -1,23 +1,27 @@
 <div class="container-font">
-    <h1 class="title-font">Sales Report For The Year</h1>
+    <h1>SALES FOR THE YEAR</h1>
+    <hr>
+    <h1>Total Sales = ${{totalSale}}</h1>
     <hr>
     <table class="table table-hover table-striped">
         <thead>
             <tr>
+                <th>Sales Id</th>
                 <th>Date</th>
-                <th>Item</th>
+                <th>Product</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
         </thead>
-        <tbody>
-            <tr *ngFor="let sale of sales">
-                <td>{{sale.date}}</td>
-                <td>{{sale.item}}</td>
-                <td>{{sale.price}}</td>
-                <td>{{sale.quantity}}</td>
-                <td>{{sale.subtotal}}</td>
+        <tbody *ngFor="let sale of sales">
+            <tr *ngFor="let entry of sale.entryDtos">
+                <td>{{sale.id}}</td>
+                <td>{{formatDate(sale.date)}}</td>
+                <td>{{entry.productDto.name}}</td>
+                <td>${{entry.productDto.price}}</td>
+                <td>{{entry.quantity}}</td>
+                <td>${{entry.total}}</td>
             </tr>
         </tbody>
     </table>

@@ -12,8 +12,10 @@ import { HttpResource } from './http.resource';
 
 export class BrandAndCategoryService {
     private categoryEndpoint = 'http://localhost:8080/inventory/category';
+    // private categoryEndpoint = 'http://spring-boot-inventory-app-dev.us-west-2.elasticbeanstalk.com/inventory/category';
 
     private brandEndpoint = 'http://localhost:8080/inventory/brand';
+    // private brandEndpoint = 'http://spring-boot-inventory-app-dev.us-west-2.elasticbeanstalk.com/inventory/brand';
 
     constructor(private httpClient: HttpClient, private resource: HttpResource) {}
 

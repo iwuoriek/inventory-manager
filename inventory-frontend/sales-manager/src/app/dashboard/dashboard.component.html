@@ -3,9 +3,9 @@
         <tr>
             <td valign="top">
                 <div class="menu">
-                    <a routerLink="/user">
-                        <span class="glyphicon glyphicon-dashboard"></span>
-                        <p>Dashboard</p>
+                    <a [routerLink]="['purchase']">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <p>Purchase</p>
                     </a>
                     <a [routerLink]="['sales']">
                         <span class="glyphicon glyphicon-piggy-bank"></span>
@@ -33,7 +33,7 @@
                     </a>
                 </div>
             </td>
-            <td style="width: 100%;" valign="top">
+            <td style="width: 100%; background-color: rgb(243, 243, 243);" valign="top">
                 <router-outlet></router-outlet>
             </td>
         </tr>

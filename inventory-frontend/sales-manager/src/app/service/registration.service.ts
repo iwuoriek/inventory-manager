@@ -10,9 +10,8 @@ import { HttpResource } from './http.resource';
 })
 
 export class RegistrationService {
-    // private user: UserAccount = null;
-
-    endpoint = 'http://localhost:8080/inventory/user';
+    private endpoint = 'http://localhost:8080/inventory/user';
+    // private endpoint = 'http://spring-boot-inventory-app-dev.us-west-2.elasticbeanstalk.com/inventory/user';
 
     constructor(private httpClient: HttpClient, private resource: HttpResource) {}
 

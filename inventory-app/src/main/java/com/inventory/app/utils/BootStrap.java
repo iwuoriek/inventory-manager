@@ -12,11 +12,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-@Configuration
+//@Configuration
 public class BootStrap {
     private static final Logger logger = LoggerFactory.getLogger(BootStrap.class);
 
-    @Bean
+    /*@Bean
     public CommandLineRunner runner(BusinessService service,
                                     UserAccountService accountService,
                                     BrandAndCategoryService bAndRService,
@@ -80,7 +80,7 @@ public class BootStrap {
             });
 
         };
-    }
+    }*/
 
     private static List<UserAccountDto> USERS() throws Exception {
         SimpleDateFormat date = new SimpleDateFormat("MM-dd-yyyy");

@@ -25,3 +25,24 @@
 .options a:hover {
     background-color: rgb(0, 111, 111)
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #343D44;
+    padding: 20px;
+    margin: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}

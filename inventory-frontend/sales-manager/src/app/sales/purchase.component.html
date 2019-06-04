@@ -1,0 +1,46 @@
+<div class="container-fluid bg">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="grid-container">
+                <div *ngFor="let product of productList" class="grid-item">
+                    <form [formGroup]=productDetail (ngSubmit)="addProduct(product)">
+                        <div>{{product.name}}</div>
+                        <div>${{product.price}}</div>
+                        <div>Left: {{product.quantity}}</div>
+                        <div>
+                            <input type="number" formControlName="amount" min="1" style="width: 50px; margin: 20px;">
+                            <button type="submit" class="btn btn-info">ADD</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h1>ITEMS</h1>
+            <hr>
+            <h2>Total = {{salesTotal}}</h2>
+            <hr>
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let entry of salesEntryList">
+                        <td>{{entry.productDto.id}}</td>
+                        <td>{{entry.productDto.name}}</td>
+                        <td>{{entry.quantity}}</td>
+                        <td>${{entry.total}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button (click)="makePurchase()" class="btn btn-primary button">MAKE PURCHASE</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,8 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './registration/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SalesComponent } from './sales/sales.component';
-import { DailyComponent } from './sales/daily.component';
-import { WeeklyComponent } from './sales/weekly.component';
+import { AllSalesComponent } from './sales/all-sales.component';
 import { MonthlyComponent } from './sales/monthly.component';
 import { AnnualComponent } from './sales/annual.component';
 import { ProductsComponent } from './products/products.component';
@@ -21,6 +20,7 @@ import { UpdateBrandComponent } from './brand/update-brand.component';
 import { CategoryComponent } from './category/category.component';
 import { AddCategoryComponent } from './category/add-category.component';
 import { UpdateCategoryComponent } from './category/update-category.component';
+import { PurchaseComponent } from './sales/puchase.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,7 @@ import { UpdateCategoryComponent } from './category/update-category.component';
     LoginComponent,
     DashboardComponent,
     SalesComponent,
-    DailyComponent,
-    WeeklyComponent,
+    AllSalesComponent,
     MonthlyComponent,
     AnnualComponent,
     ProductsComponent,
@@ -40,7 +39,8 @@ import { UpdateCategoryComponent } from './category/update-category.component';
     UpdateBrandComponent,
     CategoryComponent,
     AddCategoryComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    PurchaseComponent
   ],
   imports: [
     BrowserModule,

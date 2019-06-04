@@ -4,6 +4,10 @@
     font-size: 15px;
 }
 
+.bg {
+    background-color: #5D6062;
+}
+
 .h-font {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(136, 136, 136)
