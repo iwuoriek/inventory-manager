@@ -10,8 +10,8 @@ import { Sales } from '../model/sales';
 })
 
 export class SalesService {
-    private endpoint = 'http://localhost:8080/inventory/sales';
-    // private endpoint = 'http://spring-boot-inventory-app-dev.us-west-2.elasticbeanstalk.com/inventory/sales';
+    // private endpoint = 'http://localhost:8080/inventory/sales';
+    private endpoint = 'http://spring-boot-inventory-app-dev.us-west-2.elasticbeanstalk.com/inventory/sales';
 
     constructor(private httpClient: HttpClient, private resource: HttpResource) {}
 
