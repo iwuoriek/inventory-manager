@@ -9,4 +9,6 @@ public interface BusinessRepository extends CrudRepository<Business, Long> {
     Optional<Business> findByReference(String reference);
 
     Optional<Business> findByEmail(String email);
+
+    void deleteByEmail(String email);
 }

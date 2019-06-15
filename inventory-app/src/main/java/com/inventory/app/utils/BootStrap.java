@@ -55,7 +55,7 @@ public class BootStrap {
             logger.info("*************** SALES ***************");
             SalesDto salesDto = new SalesDto( date.parse("05-29-2019"), 2900.95);
 
-            SalesEntryDto entry1 = new SalesEntryDto(productDtos.get(0), 3, 129.00);
+            SalesEntryDto entry1 = new SalesEntryDto(productDtos.get(0), 3, 90.00);
             SalesEntryDto entry2 = new SalesEntryDto(productDtos.get(1), 5, 120.00);
             SalesEntryDto entry3 = new SalesEntryDto(productDtos.get(2), 7, 150.00);
             SalesEntryDto entry4 = new SalesEntryDto(productDtos.get(3), 9, 129.00);

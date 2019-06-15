@@ -11,4 +11,6 @@ public interface UserAccountRepository extends CrudRepository<UserAccount, Long>
     Optional<UserAccount> findByUsername(String username);
 
     Optional<List<UserAccount>> findByBusiness(Business business);
+
+    void deleteByUsername(String username);
 }
